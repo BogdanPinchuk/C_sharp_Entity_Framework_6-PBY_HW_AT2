@@ -4,12 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-// Щоб не сильно ускладнювати, реалізуємо всі можливі зв'язки за
-// допомогою запропонованих моделей
-// Спеціальність - Аудиторія: 1х1
-// Група - Спеціальності: 1хM
-// Тренера - Спеціальності: МхМ
-
 namespace LesApp0.Models
 {
     /// <summary>
@@ -67,11 +61,28 @@ namespace LesApp0.Models
         /// Аудиторія, яка закріплена за даною групою
         /// </summary>
         public Audience Audience { get; set; }
-
         public Group()
         {
             TimeTable = new List<DayOfWeek>();
             Specialities = new List<Speciality>();
         }
+
+        public override string ToString()
+        {
+            var s = new StringBuilder($"Group for {Course} with {Form} studing,\n" +
+                $"\thas {Count} students,\n" +
+                $"\tstarted learning {Date.ToShortDateString()},\n" +
+                $"\ttraining: ");
+            
+            foreach (var i in TimeTable)
+            {
+                s.Append(i.ToString() + ", ");
+            }
+
+            s.Append($"from {Date.ToShortTimeString()} to {Date.AddHours(2).ToShortTimeString()}");
+
+            return s.ToString();
+        }
+
     }
 }

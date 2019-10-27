@@ -34,6 +34,10 @@ namespace LesApp0.Models
         /// ПІБ
         /// </summary>
         public string FullName { get; set; }
+        /// <summary>
+        /// Тип тренера
+        /// </summary>
+        public TypeTrainer Type { get; set; }
 
         /// <summary>
         /// Спеціальності, які викладає тренер
@@ -44,5 +48,8 @@ namespace LesApp0.Models
         {
             Specialities = new List<Speciality>();
         }
+
+        public override string ToString()
+            => $"{Type.ToString()} - {FullName}";
     }
 }

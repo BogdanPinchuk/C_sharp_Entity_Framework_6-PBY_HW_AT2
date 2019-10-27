@@ -38,10 +38,12 @@ namespace LesApp0.Models
         /// Групи, які навчаються за даною спеціальністю
         /// </summary>
         public Group Group { get; set; }
-
         public Speciality()
         {
             Trainers = new List<Trainer>();
         }
+
+        public override string ToString()
+            => $"Speciality: {Name}, has {Lessons} lessons in {Audience.ToString()}";
     }
 }

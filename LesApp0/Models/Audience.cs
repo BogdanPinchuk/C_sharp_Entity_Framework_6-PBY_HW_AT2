@@ -22,12 +22,15 @@ namespace LesApp0.Models
         /// <summary>
         /// Категорія
         /// </summary>
-        public char Category { get; set; }
+        public string Category { get; set; }
 
-        /// <summary>
-        /// Спеціальність, яка закріплена за даною аудиторією
-        /// </summary>
-        public Speciality Speciality { get; set; }
+        ///// <summary>
+        ///// Спеціальність, яка закріплена за даною аудиторією
+        ///// </summary>
+        //public Speciality Speciality { get; set; }
+
+        public override string ToString()
+            => $"Audience № {Number}{((Category !=  " ") ? $"-{Category}" : string.Empty)}";
 
     }
 }
