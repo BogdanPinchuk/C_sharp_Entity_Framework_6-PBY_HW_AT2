@@ -45,18 +45,6 @@ namespace LesApp0.Context
                 new WeekDays() { DaysOfWeek = DayOfWeek.Monday },
                 new WeekDays() { DaysOfWeek = DayOfWeek.Wednesday },
                 new WeekDays() { DaysOfWeek = DayOfWeek.Friday },
-            }; 
-            #endregion
-
-            #region створюємо групу
-            Group group = new Group()
-            {
-                Course = "C#/.Net Developer",
-                Count = 20,
-                Form = Group.FormLearning.FullTime,
-                TimeTable = daysOfWeek.ToList(),
-                Date = new DateTime(2019, 06, 10, 19, 00, 00),
-                Specialities = specialities,
             };
             #endregion
 
@@ -75,14 +63,27 @@ namespace LesApp0.Context
                     Specialities = new List<Speciality>(){ specialities[4], specialities[5]} },
             };
             #endregion
+            
+            #region створюємо групу
+            Group group = new Group()
+            {
+                Course = "C#/.Net Developer",
+                Count = 20,
+                Form = Group.FormLearning.FullTime,
+                TimeTable = daysOfWeek.ToList(),
+                Date = new DateTime(2019, 06, 10, 19, 00, 00),
+                Specialities = specialities,
+            };
 
             // збереження даних
-            db.DaysOfWeek.AddRange(daysOfWeek);
             db.Audiences.AddRange(audiences);
             db.Specialities.AddRange(specialities);
+            db.DaysOfWeek.AddRange(daysOfWeek);
             db.Trainers.AddRange(trainers);
             db.Groups.Add(group);
             db.SaveChanges();
+            #endregion
+
         }
     }
 }

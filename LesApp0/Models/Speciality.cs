@@ -27,7 +27,9 @@ namespace LesApp0.Models
         /// <summary>
         /// Тренера, які викладають дані спеціальності
         /// </summary>
-        public ICollection<Trainer> Trainers { get; set; }
+        public virtual ICollection<Trainer> Trainers { get; set; }
+        // Примітка. Оскільки ми додаємо спеціалізації в тренера, то спеціалізація 
+        // має бути virtual
 
         /// <summary>
         /// Аудиторія, закріплена за даною спеціальністю

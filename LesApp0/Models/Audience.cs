@@ -24,11 +24,6 @@ namespace LesApp0.Models
         /// </summary>
         public string Category { get; set; }
 
-        ///// <summary>
-        ///// Спеціальність, яка закріплена за даною аудиторією
-        ///// </summary>
-        //public Speciality Speciality { get; set; }
-
         public override string ToString()
             => $"Audience № {Number}{((Category !=  " ") ? $"-{Category}" : string.Empty)}";
 
