@@ -41,5 +41,10 @@ namespace LesApp0.Context
         /// Спеціальності
         /// </summary>
         public virtual DbSet<Speciality> Specialities { get; set; }
+        /// <summary>
+        /// Студенти
+        /// </summary>
+        public virtual DbSet<Student> Students { get; set; }
+
     }
 }

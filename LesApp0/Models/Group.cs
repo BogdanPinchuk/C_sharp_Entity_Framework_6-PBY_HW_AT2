@@ -30,7 +30,8 @@ namespace LesApp0.Models
         /// <summary>
         /// Кількість студентів у групі
         /// </summary>
-        public int Count { get; set; }
+        public int Count
+            => Students.Count;
         /// <summary>
         /// Курс
         /// </summary>
@@ -57,9 +58,14 @@ namespace LesApp0.Models
         /// Спеціальності і курси по якій навчаєтсья група
         /// </summary>
         public ICollection<Speciality> Specialities { get; set; }
+        /// <summary>
+        /// Студенти які навчаються в групі
+        /// </summary>
+        public ICollection<Student> Students { get; set; }
 
         public Group()
         {
+            Students = new List<Student>();
             TimeTable = new List<WeekDays>();
             Specialities = new List<Speciality>();
         }

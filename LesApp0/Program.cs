@@ -11,6 +11,7 @@ using System.Threading.Tasks;
 // допомогою запропонованих моделей
 // Спеціальність - Аудиторія: 1х1
 // Група - Спеціальності: 1хM
+// Група - Студенти: 1хM
 // Тренера - Спеціальності: МхМ
 
 namespace LesApp0
@@ -30,6 +31,7 @@ namespace LesApp0
                 db.Audiences.Load();
                 db.Trainers.Load();
                 db.Specialities.Load();
+                db.Students.Load();
                 db.Groups.Load();
 
                 // виведення інформації
@@ -43,6 +45,7 @@ namespace LesApp0
 
                     foreach (var s in g.Specialities)
                     {
+                        // назва спеціальності
                         Console.ForegroundColor = ConsoleColor.Green;
                         Console.WriteLine("\n" + s.ToString());
                         Console.ResetColor();
@@ -55,7 +58,15 @@ namespace LesApp0
                         {
                             Console.WriteLine("\t" + t.ToString());
                         }
+                    }
 
+                    Console.ForegroundColor = ConsoleColor.Red;
+                    Console.WriteLine("\nСтуденти групи:");
+                    Console.ResetColor();
+
+                    foreach (var s in g.Students)
+                    {
+                        Console.WriteLine("\t" + s.ToString());
                     }
                 }
 

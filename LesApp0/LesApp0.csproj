@@ -57,6 +57,7 @@
     <Compile Include="Models\Audience.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\Speciality.cs" />
+    <Compile Include="Models\Student.cs" />
     <Compile Include="Models\Trainer.cs" />
     <Compile Include="Models\WeekDays.cs" />
     <Compile Include="Program.cs" />

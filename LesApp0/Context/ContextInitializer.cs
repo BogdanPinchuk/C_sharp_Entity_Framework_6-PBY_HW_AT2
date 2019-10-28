@@ -63,15 +63,27 @@ namespace LesApp0.Context
                     Specialities = new List<Speciality>(){ specialities[4], specialities[5]} },
             };
             #endregion
-            
+
+            #region створюємо студентів
+            Student[] students = new Student[]
+                {
+                new Student() { FullName = "Bogdan", Type = Student.TypeStudent.Live },
+                new Student() { FullName = "Ilya", Type = Student.TypeStudent.Live },
+                new Student() { FullName = "Sergiy", Type = Student.TypeStudent.Live },
+                new Student() { FullName = "Oleg", Type = Student.TypeStudent.Online },
+                new Student() { FullName = "Andriy", Type = Student.TypeStudent.Online },
+                new Student() { FullName = "Oleksiy", Type = Student.TypeStudent.Online },
+                }; 
+            #endregion
+
             #region створюємо групу
             Group group = new Group()
             {
                 Course = "C#/.Net Developer",
-                Count = 20,
                 Form = Group.FormLearning.FullTime,
                 TimeTable = daysOfWeek.ToList(),
                 Date = new DateTime(2019, 06, 10, 19, 00, 00),
+                Students = students,
                 Specialities = specialities,
             };
 
@@ -80,6 +92,7 @@ namespace LesApp0.Context
             db.Specialities.AddRange(specialities);
             db.DaysOfWeek.AddRange(daysOfWeek);
             db.Trainers.AddRange(trainers);
+            db.Students.AddRange(students);
             db.Groups.Add(group);
             db.SaveChanges();
             #endregion
