@@ -26,6 +26,10 @@ namespace LesApp0
             using (ITContext db = new ITContext())
             {
                 // завантаження даних
+                db.DaysOfWeek.Load();
+                db.Audiences.Load();
+                db.Trainers.Load();
+                db.Specialities.Load();
                 db.Groups.Load();
 
                 // виведення груп

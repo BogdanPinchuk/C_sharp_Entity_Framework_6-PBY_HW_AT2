@@ -26,6 +26,10 @@ namespace LesApp0.Context
         /// </summary>
         public virtual DbSet<Group> Groups { get; set; }
         /// <summary>
+        /// Дні тижня
+        /// </summary>
+        public virtual DbSet<WeekDays> DaysOfWeek { get; set; }
+        /// <summary>
         /// Аудиторії
         /// </summary>
         public virtual DbSet<Audience> Audiences { get; set; }

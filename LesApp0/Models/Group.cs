@@ -51,19 +51,16 @@ namespace LesApp0.Models
         /// <summary>
         /// Розклад - по яких днях відбуваються занняття
         /// </summary>
-        public List<DayOfWeek> TimeTable { get; set; }
+        public ICollection<WeekDays> TimeTable { get; set; }
 
         /// <summary>
         /// Спеціальності і курси по якій навчаєтсья група
         /// </summary>
         public ICollection<Speciality> Specialities { get; set; }
-        /// <summary>
-        /// Аудиторія, яка закріплена за даною групою
-        /// </summary>
-        public Audience Audience { get; set; }
+
         public Group()
         {
-            TimeTable = new List<DayOfWeek>();
+            TimeTable = new List<WeekDays>();
             Specialities = new List<Speciality>();
         }
 
@@ -85,4 +82,5 @@ namespace LesApp0.Models
         }
 
     }
+
 }
